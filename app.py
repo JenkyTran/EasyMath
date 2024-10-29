@@ -11,7 +11,7 @@ def permutation(n, k):
     return math.perm(n, k)
 
 st.set_page_config(layout="wide")
-st.sidebar.markdown("<h1 style='text-align: center; color: #FF6347;'>Tính Toán Vui!</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: center; color: #FF6347;'></h1>", unsafe_allow_html=True)
 
 
 st.sidebar.markdown("<h4 style='text-align: center; color: #4682B4;'>Chọn một tính năng:</h4>", unsafe_allow_html=True)
@@ -37,7 +37,7 @@ col_main, col_chat, col_pad = st.columns([1, 5, 1])
 
 # Nội dung cột bên phải (nơi hiển thị chat và giới thiệu hệ thống)
 with col_chat:
-    st.markdown("<h1 style='text-align: center; color: #4682B4;'>Chào mừng đến với Hệ Thống Tính Toán!</h1>",
+    st.markdown("<h1 style='text-align: center; color: #4682B4;'>Chào mừng đến với Easy Math!</h1>",
                 unsafe_allow_html=True)
     # Nút giới thiệu hệ thống và thông điệp chào mừng
     if "chat_history" not in st.session_state:
@@ -45,7 +45,7 @@ with col_chat:
 
     if st.button("📢 Giới Thiệu Hệ Thống"):
         st.write(
-            "Chào các bạn! Đây là hệ thống giúp bạn tính toán hoán vị, tổ hợp và chỉnh hợp một cách dễ dàng và vui nhộn.")
+            "Chào các bạn! Đây là hệ thống giúp bạn học các kiến thức toán về hoán vị, tổ hợp và chỉnh hợp một cách dễ dàng thông qua sự chuyển đổi các phép toán khô khan thành các mô tả gần gũi, dễ hiểu.")
 
     # Nhập số lượng phần tử
     n = st.number_input("Nhập số lượng phần tử (n)", min_value=1, step=1)
@@ -54,18 +54,32 @@ with col_chat:
         k = st.number_input("Nhập số phần tử chọn (k)", min_value=1, max_value=n, step=1)
     else:
         k = None
+
+    answer = ""
     if st.session_state.type_math == "th":
         st.write(f"Tính C({n}, {k}) ") #{combination(n, k)}
+        answer = combination(n, k)
     if st.session_state.type_math == "hv":
         st.write(f"Tính P({n}) ")
+        answer = math.factorial(n)
     if st.session_state.type_math == "ch":
         st.write(f"Tính A({n}, {k})")
+        answer = permutation(n, k)
 
     # Nút mô tả để lấy kết quả mô tả từ hệ thống ChatGoogleGenerativeAI
+    # Khi nhấn nút "Mô tả"
     gen_des = st.button("Mô tả", key="mota")
     if gen_des:
         response = get_response(st.session_state.type_math, n, k)
+        st.session_state.response = response  # Lưu response vào session_state
         st.write(response)
+
+    # # Hiển thị nút "Đáp án" chỉ khi gen_des đã được nhấn
+    # if 'response' in st.session_state:
+    #     key_ans = st.button("Đáp án")
+    #     if key_ans:
+    #         st.write(st.session_state.response)  # Hiển thị response đã lưu
+    #         st.write(answer)  # Hiển thị đáp án
 
 # Hiển thị nội dung hướng dẫn trong sidebar dựa trên tính năng đã chọn
 if st.session_state.type_math == "hv":

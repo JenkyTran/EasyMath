@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="">
+    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="[Deploy] Streamlit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,12 +76,25 @@
       <option name="presentableId" value="Default" />
       <updated>1730128508979</updated>
       <workItem from="1730128510000" duration="12538000" />
-      <workItem from="1730171601997" duration="44000" />
+      <workItem from="1730171601997" duration="2208000" />
     </task>
+    <task id="LOCAL-00001" summary="[Deploy] Streamlit">
+      <option name="closed" value="true" />
+      <created>1730171805901</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730171805901</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Deploy] Streamlit" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Deploy] Streamlit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EasyMath$prompt.coverage" NAME="prompt Coverage Results" MODIFIED="1730138496003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
