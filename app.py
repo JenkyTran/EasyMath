@@ -1,6 +1,5 @@
 import streamlit as st
 import math
-from langchain_google_genai import ChatGoogleGenerativeAI
 from prompt import get_response
 
 # Hàm tính tổ hợp
