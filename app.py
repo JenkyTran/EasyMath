@@ -12,7 +12,12 @@ def combination(n, k):
 def permutation(n, k):
     return math.perm(n, k)
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="EasyMath",
+    page_icon="📊",
+    layout="wide"
+)
+
 st.sidebar.markdown("<h1 style='text-align: center; color: #FF6347;'></h1>", unsafe_allow_html=True)
 
 
@@ -55,9 +60,9 @@ with st.sidebar:
 col_main, col_chat, col_pad = st.columns([1, 8, 1])
 
 members = [
-    {"name": "Huy", "class": "10A1", "school": "THCS", "image": "image/man-avatar-icon-free-vector.jpg"},
-    {"name": "Quân", "class": "11B2", "school": "THCS", "image": "image/man-avatar-icon-free-vector.jpg"},
-    {"name": "Khánh", "class": "12C3", "school": "THCS", "image": "image/man-avatar-icon-free-vector.jpg"},
+    {"name": "Đường Quốc Huy ", "class": "7A18", "school": "THCS Nghĩa Tân Quận Cầu Giấy", "image": "image/DuongQuocHuy.jpg"},
+    {"name": "Đặng Minh Quân", "class": "7A18", "school": "THCS Nghĩa Tân Quận Cầu Giấy", "image": "image/DuongMinhQuan.jpg"},
+    {"name": "Nguyễn Nam Khánh", "class": "7A18", "school": "THCS Nghĩa Tân Quận Cầu Giấy", "image": "image/NguyenNamKhanh.jpg"},
 ]
 
 with col_chat:

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="[Update] UI and descript">
+    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="[Update] Image folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/prompt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/man-avatar-icon-free-vector.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
       <workItem from="1730128510000" duration="12538000" />
       <workItem from="1730171601997" duration="2827000" />
       <workItem from="1730366597372" duration="831000" />
-      <workItem from="1731915860144" duration="8723000" />
+      <workItem from="1731915860144" duration="11256000" />
     </task>
     <task id="LOCAL-00001" summary="[Deploy] Streamlit">
       <option name="closed" value="true" />
@@ -98,7 +98,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730186881643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[Update] Solve math">
+      <option name="closed" value="true" />
+      <created>1731937153463</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731937153463</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[Update] Image folder">
+      <option name="closed" value="true" />
+      <created>1731940951747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731940951747</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +123,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[Deploy] Streamlit" />
     <MESSAGE value="[Update] UI and descript" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Update] UI and descript" />
+    <MESSAGE value="[Update] Solve math" />
+    <MESSAGE value="[Update] Image folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Update] Image folder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EasyMath$prompt.coverage" NAME="prompt Coverage Results" MODIFIED="1730138496003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
