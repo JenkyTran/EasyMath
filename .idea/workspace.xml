@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="[Update] Image folder">
+    <list default="true" id="5bdbe11e-e4b4-4018-9e53-61a8b30fbd98" name="Changes" comment="[Update] Image folder avatar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/man-avatar-icon-free-vector.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prompt.py" beforeDir="false" afterPath="$PROJECT_DIR$/prompt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +63,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.24807.21" />
+        <option value="bundled-python-sdk-00717045f1d3-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.24807.21" />
       </set>
     </attachedChunks>
   </component>
@@ -80,7 +79,8 @@
       <workItem from="1730128510000" duration="12538000" />
       <workItem from="1730171601997" duration="2827000" />
       <workItem from="1730366597372" duration="831000" />
-      <workItem from="1731915860144" duration="11256000" />
+      <workItem from="1731915860144" duration="12302000" />
+      <workItem from="1732896659414" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="[Deploy] Streamlit">
       <option name="closed" value="true" />
@@ -114,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731940951747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[Update] Image folder avatar">
+      <option name="closed" value="true" />
+      <created>1731942150873</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731942150873</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +133,8 @@
     <MESSAGE value="[Update] UI and descript" />
     <MESSAGE value="[Update] Solve math" />
     <MESSAGE value="[Update] Image folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Update] Image folder" />
+    <MESSAGE value="[Update] Image folder avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Update] Image folder avatar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EasyMath$prompt.coverage" NAME="prompt Coverage Results" MODIFIED="1730138496003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

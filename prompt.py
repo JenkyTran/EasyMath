@@ -2,7 +2,7 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 if 'GOOGLE_API_KEY' not in os.environ:
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyC6A1MJR-kk-KetpF3Llqna_GE4hulhwMU"
+    os.environ['GOOGLE_API_KEY'] = "AIzaSyBtL9pH7na1PF4Y-AxI51bxv83dCsS89nY"
 
 llm = ChatGoogleGenerativeAI(model='gemini-1.5-flash', temperature=0.9)
 
