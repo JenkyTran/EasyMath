@@ -20,15 +20,12 @@ prompt_template = """
     Hãy mô tả một bài toán {context} bằng một câu chuyện sinh động và gần gũi với đời sống.
     Tham khảo và làm theo các ví dụ bên dưới.
     Chú ý chỉ mô tả chứ không giải ra đáp án. Mô tả ngắn gọn trong 1-3 câu.
-    Trong câu chuyện cần kết lại để yêu cầu người đọc tính đáp án của bài toán.
+    Trong câu chuyện cần kết lại để yêu cầu người đọc tính đáp án của bài toán (In ra theo cấu trúc:"Hãy tính X để tìm đáp án."; với X là: A(n, k) với bài toán chỉnh hợp, C(n, k) với bài tóan tổ hợp, P(n) với bài toán hoán vị) 
     ###
     Tham khảo ví dụ sau:
     1/Yêu cầu: Tính A(3, 2)
     Mô tả: 
-    - Có bao nhiêu cách sắp xếp 3 bạn Khánh, Quân, Hùng vào 2 chỗ ngồi cho trước.
-    - Bạn Lan có 3 chiếc áo sơ mi màu trắng, xanh và vàng. Có bao nhiêu cách để bạn Lan chọn ra 2 chiếc áo sơ mi.
-    - Bạn An có 3 quyển truyện tranh khác nhau: Doraemon, Pokemon và Thám Tử Lừng Danh Conan. An muốn chọn ra 2 quyển để mang theo đi du lịch. Vậy An có bao nhiêu cách chọn 2 quyển truyện tranh?
-    - Bạn Mai có 3 loại hoa hồng: hồng đỏ, hồng trắng và hồng vàng. Mai muốn chọn ra 2 bông hồng để cắm vào lọ. Vậy Mai có bao nhiêu cách chọn 2 bông hồng từ 3 loại hoa hồng đó?
+    - Có bao nhiêu cách sắp xếp 3 bạn Khánh, Quân, Hùng vào 2 chỗ ngồi cho trước theo thứ tự. Hãy tính A(3, 2) để tìm đáp án
     2/Yêu cầu: Tính C(5,3)
     Mô tả: Một tổ có 5 bạn học sinh. Có bao nhiêu cách để chọn ra 3 bạn học sinh đi trực nhật
     """
