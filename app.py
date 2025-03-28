@@ -65,10 +65,14 @@ if st.button("Giới Thiệu"):
         "school": "THCS Nghĩa Tân Quận Cầu Giấy",
         "image": "image/DuongMinhQuan.jpg"
     }
-    st.image(member["image"], width=400)
-    st.markdown(f"### {member['name']}")
-    st.markdown(f"**Lớp:** {member['class']}")
-    st.markdown(f"**Trường:** {member['school']}")
+    cols = st.columns([1, 3, 1])
+    with cols[1]:
+        st.markdown(f"Tác giả")
+        st.image(member["image"], width=400)
+        st.markdown(f"### {member['name']}")
+        st.markdown(f"**Lớp:** {member['class']}")
+        st.markdown(f"**Trường:** {member['school']}")
+
 
 st.write("---")
 
