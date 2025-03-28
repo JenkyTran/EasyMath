@@ -1,15 +1,20 @@
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-if 'GOOGLE_API_KEY' not in os.environ:
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyBtL9pH7na1PF4Y-AxI51bxv83dCsS89nY"
 
-llm = ChatGoogleGenerativeAI(model='gemini-1.5-flash', temperature=0.9)
+llm = ChatGoogleGenerativeAI(
+    model='gemini-1.5-flash',
+    google_api_key="AIzaSyDUlZ7Ix0t7w3cjaVs48qwPM1QC69blmj8",
+    temperature=0.9
+)
 
 def create_prompt(context):
     return prompt_template.format(context=context)
+
+
 def create_prompt_solve(context):
     return prompt_template_solve.format(context=context)
+
 
 prompt_template = """
     Bạn là một chuyên gia trong lĩnh vực hoán vị, tổ hợp, chỉnh hợp và bạn biết các kiến thức sau:
@@ -57,19 +62,32 @@ prompt_template_solve = """
     2/ Nhóm học sinh 3 người được chọn (không phân biệt nam, nữ - công việc) là một tổ hợp chập 3 của 40 (học sinh).
     """
 
+
 def get_response(type_math, n, k):
+    if llm is None:
+        raise ValueError("LLM not initialized. Check your API key and connection.")
+
     if type_math == 'th':
-        context = 'tổ hợp C(' + str(n) + ', ' + str(k) + ')'
-    if type_math == 'ch':
-        context = 'chỉnh hợp P(' + str(n) + ', ' + str(k) + ')'
-    if type_math == 'hv':
-        context = 'hoán  vị P(' + str(n) + ')'
+        context = f'tổ hợp C({n}, {k})'
+    elif type_math == 'ch':
+        context = f'chỉnh hợp P({n}, {k})'
+    elif type_math == 'hv':
+        context = f'hoán vị P({n})'
+    else:
+        raise ValueError("Invalid math type. Use 'th', 'ch', or 'hv'.")
+
     prompt = create_prompt(context)
     response = llm.invoke(prompt).content
     return response
 
+
 def get_solve(context):
+    if llm is None:
+        raise ValueError("LLM not initialized. Check your API key and connection.")
+
     prompt = create_prompt_solve(context)
     response = llm.invoke(prompt).content
     return response
+
+# Optional: Uncomment to test
 # print(get_response('th', 3, 2))
