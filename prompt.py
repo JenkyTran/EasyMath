@@ -1,4 +1,6 @@
 import os
+import json
+import re
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 
@@ -88,6 +90,108 @@ def get_solve(context):
     prompt = create_prompt_solve(context)
     response = llm.invoke(prompt).content
     return response
+
+
+def create_prompt_quiz(quiz_type, num_questions=10):
+    # Ánh xạ mã quiz sang mô tả dạng bài
+    type_mapping = {
+        "hv": "Hoán vị",
+        "th": "Tổ hợp",
+        "ch": "Chỉnh hợp",
+        "mix": "Hỗn hợp"
+    }
+
+    if quiz_type not in type_mapping:
+        raise ValueError("Invalid quiz_type. Expected one of: hv, th, ch, mix.")
+
+    math_type = type_mapping[quiz_type]
+
+    # Xác định mô tả bài toán dựa theo mã quiz
+    if quiz_type == "hv":
+        problem_description = "chỉ tạo bài toán hoán vị"
+    elif quiz_type == "th":
+        problem_description = "chỉ tạo bài toán tổ hợp"
+    elif quiz_type == "ch":
+        problem_description = "chỉ tạo bài toán chỉnh hợp"
+    else:  # mix
+        problem_description = "tạo bài toán hỗn hợp, phân bổ đều giữa hoán vị, tổ hợp và chỉnh hợp"
+
+    prompt = f"""
+    Bạn là một chuyên gia toán học, chuyên về hoán vị, tổ hợp và chỉnh hợp.
+    Hãy tạo {num_questions} bài toán theo yêu cầu sau:
+    - Nếu yêu cầu là "{math_type}" (code: {quiz_type}), {problem_description}.
+    
+    Các bài toán cần đáp ứng:
+    1. Đề bài rõ ràng, sinh động và liên quan đến đời sống hàng ngày.
+    2. Yêu cầu học sinh tính toán theo công thức phù hợp: P(n) cho bài toán hoán vị, C(n, k) cho bài toán tổ hợp, hoặc A(n, k) cho bài toán chỉnh hợp.
+    3. Có đáp án chính xác (kết quả là số).
+    
+    Trả về kết quả duy nhất dưới dạng JSON với cấu trúc sau (không có thêm bất kỳ text nào khác):
+    ```json
+    [
+      {{
+        "question": "Đề bài toán 1",
+        "answer": "Đáp án chính xác (số)",
+        "explanation": "Giải thích ngắn gọn về cách giải, công thức được áp dụng và lý do vì sao",
+        "type": "{math_type}"
+      }},
+      ...
+    ]
+    Chỉ trả về JSON, không có text khác.
+    """
+    return prompt
+
+
+def get_quiz_questions(quiz_type, num_questions=10):
+    """
+    Tạo các câu hỏi bài kiểm tra dựa trên loại được chọn
+
+    quiz_type: "hv" (Hoán vị), "th" (Tổ hợp), "ch" (Chỉnh hợp), hoặc "mix" (Hỗn hợp)
+    """
+    if llm is None:
+        raise ValueError("LLM not initialized. Check your API key and connection.")
+
+    prompt = create_prompt_quiz(quiz_type, num_questions)
+    response = llm.invoke(prompt).content
+
+    json_match = re.search(r'\[.*\]', response, re.DOTALL)
+    if json_match:
+        json_str = json_match.group(0)
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError:
+            raise ValueError("Failed to parse JSON response from AI")
+    else:
+        raise ValueError("AI response does not contain JSON format")
+
+
+def get_explanation_for_answer(question, user_answer, correct_answer):
+    """
+    Lấy giải thích chi tiết cho câu trả lời của người dùng
+    """
+    if llm is None:
+        raise ValueError("LLM not initialized. Check your API key and connection.")
+
+    prompt = f"""
+    Bạn là một giáo viên toán chuyên về xác suất thống kê, hoán vị, tổ hợp, chỉnh hợp.
+
+    Bài toán: {question}
+
+    Đáp án của học sinh: {user_answer}
+    Đáp án đúng: {correct_answer}
+
+    Hãy giải thích chi tiết cách giải bài toán từng bước một:
+    1. Xác định đây là bài toán gì (hoán vị, tổ hợp hay chỉnh hợp)
+    2. Phân tích yêu cầu bài toán
+    3. Áp dụng công thức phù hợp
+    4. Tính toán để có kết quả
+
+    Nếu học sinh trả lời sai, hãy chỉ ra lỗi sai và cách sửa.
+    Giải thích ngắn gọn, dễ hiểu, phù hợp với học sinh cấp 2, cấp 3. Đưa ra giải thích ngắn gọn trong 5-10 câu. Chú ý trả về các biểu thức, công thức toán phù hợp để hiển thị trong streamlit
+    """
+    response = llm.invoke(prompt).content
+    return response
+
 
 # Optional: Uncomment to test
 # print(get_response('th', 3, 2))
