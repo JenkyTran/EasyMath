@@ -90,7 +90,7 @@ if st.button("Giới Thiệu"):
         Easy Math là một công cụ học toán trực tuyến sử dụng công nghệ AI, giúp giải thích các công thức, bài toán phức tạp như hoán vị, tổ hợp và chỉnh hợp thành những mô tả dễ hiểu. Được phát triển bởi nhóm các bạn học sinh bằng công nghệ GenAI và ngôn ngữ lập trình Python, Easy Math giúp học sinh và giáo viên tiếp cận toán học một cách dễ dàng hơn, đồng thời tiết kiệm thời gian và nâng cao hiệu quả học tập. Truy cập Easy Math để trải nghiệm cách học toán mới mẻ, đơn giản và hiệu quả!
             """)
         # st.markdown(f"Tác giả")
-        st.image(member["image"], use_column_width=True)
+        st.image(member["image"], use_container_width=True)
         # st.markdown(f"### {member['name']}")
 
 st.write("---")
