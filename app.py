@@ -78,10 +78,7 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
 if st.button("Giới Thiệu"):
-    st.info("""
-        Easy Math là công cụ học toán trực tuyến với công nghệ AI, giúp giải thích các bài toán phức tạp (hoán vị, tổ hợp, chỉnh hợp) thành những mô tả dễ hiểu.
-        Phát triển bởi nhóm học sinh với GenAI và Python, Easy Math giúp tiết kiệm thời gian và nâng cao hiệu quả học tập.
-    """)
+
 
     member = {
         "name": "Đặng Minh Quân và Nguyễn Nam Khánh",
@@ -89,9 +86,12 @@ if st.button("Giới Thiệu"):
     }
     cols = st.columns([1, 5, 1])
     with cols[1]:
-        st.markdown(f"Tác giả")
-        st.image(member["image"], width=600)
-        st.markdown(f"### {member['name']}")
+        st.info("""
+        Easy Math là một công cụ học toán trực tuyến sử dụng công nghệ AI, giúp giải thích các công thức, bài toán phức tạp như hoán vị, tổ hợp và chỉnh hợp thành những mô tả dễ hiểu. Được phát triển bởi nhóm các bạn học sinh bằng công nghệ GenAI và ngôn ngữ lập trình Python, Easy Math giúp học sinh và giáo viên tiếp cận toán học một cách dễ dàng hơn, đồng thời tiết kiệm thời gian và nâng cao hiệu quả học tập. Truy cập Easy Math để trải nghiệm cách học toán mới mẻ, đơn giản và hiệu quả!
+            """)
+        # st.markdown(f"Tác giả")
+        st.image(member["image"], use_column_width=True)
+        # st.markdown(f"### {member['name']}")
 
 st.write("---")
 
