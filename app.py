@@ -85,17 +85,13 @@ if st.button("Giới Thiệu"):
 
     member = {
         "name": "Đặng Minh Quân và Nguyễn Nam Khánh",
-        "class": "7A18",
-        "school": "THCS Nghĩa Tân Quận Cầu Giấy",
         "image": "image/team.png"
     }
-    cols = st.columns([1, 8, 1])
+    cols = st.columns([1, 5, 1])
     with cols[1]:
         st.markdown(f"Tác giả")
         st.image(member["image"], width=600)
         st.markdown(f"### {member['name']}")
-        st.markdown(f"**Lớp:** {member['class']}")
-        st.markdown(f"**Trường:** {member['school']}")
 
 st.write("---")
 
